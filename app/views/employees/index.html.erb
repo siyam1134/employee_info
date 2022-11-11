@@ -1,0 +1,39 @@
+<div class="container">
+<div class="container mt-5">
+<strong><h2 class="text-center">Employee List</h2></strong>
+<table class="table table-bordered table-dark">
+<thead>
+  <tr>
+    <th scope="col"><i class="fas fa-user fa-solid"></i>  First Name</th>
+    <th scope="col"><i class="fas fa-user fa-solid"></i>  Last Name</th>
+    <th scope="col"><i class="fas fa-bars fa-solid"></i>  Email</th>
+    <th scope="col"><i class="fas fa-bars fa-solid"></i>  Phone</th>
+    <th scope="col"><i class="fas fa-bars fa-solid"></i>  Salary</th>
+    <th scope="col"><i class="fas fa-bars fa-solid"></i>  Department</th>
+    <th scope="col"><i class="fas fa-bars fa-solid"></i>  Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @employees.each do |emp|%>
+    <tr>
+      <th scope="row"><%= emp.first_name%></th>
+      <td><%= emp.last_name%></td>
+      <td><%= emp.email%></td>
+      <td><%= emp.phone%></td>
+      <td><%= emp.salary%></td>
+      <td><%= emp.department.name%></td>
+      <td class="text-primary"><%= link_to 'Edit Department', change_department_employees_path(emp.id), {:remote=>true,'data-toggle': 'modal', 'data-target': '#modal-window'} %></td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+<div class="modal fade" id="modal-window" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+  </div>
+</div>
+</div>

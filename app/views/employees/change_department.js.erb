@@ -1,0 +1,2 @@
+$("#modal-window").find(".modal-content").html("<%= j render(:partial=>'employees/edit_dept_modal',:locals=>{:id=>@emp.id,:name=>[@emp.first_name,@emp.last_name].join(" ")}) %>");
+$("#modal-window").modal();
